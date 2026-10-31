@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Disaster DSS · CBR Dashboard</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <nav aria-label="Main navigation"><button type="button" class="nav-button active" id="nav-analyze" aria-current="page">Analyze scenario</button><button type="button" class="nav-button" id="nav-library">Case library</button></nav>
+    <button type="button" class="text-button" id="stop-dashboard">Stop dashboard</button>
+  </header>
+  <main>
+    <h1 id="page-title" class="sr-only">Analyze scenario</h1>
+    <div id="global-error" class="feedback error" role="alert" hidden></div>
+    <section id="analyze-view" aria-label="Analyze scenario">
+      <div class="workspace">
+        <section class="panel scenario-panel">
+          <div class="panel-heading scenario-heading"><h2>Scenario</h2><button type="button" class="text-button" id="load-example">Use sample</button></div>
+          <form id="scenario-form">
+            <fieldset id="scenario-fields" disabled>
+              <label>Disaster type<select name="disaster_type" required></select></label>
+              <div class="form-row"><label>Severity<select name="severity" required><option value="1">1 · Low</option><option value="2">2 · Moderate</option><option value="3" selected>3 · Elevated</option><option value="4">4 · High</option><option value="5">5 · Very high</option></select></label><label>Affected people<input name="affected_people" type="number" min="1" max="1000000" step="1" required placeholder="e.g. 1200"></label></div>
+              <div class="form-row"><label>Road access<select name="road_access" required></select></label><label>Area type<select name="area_type" required></select></label></div>
+              <h3 class="form-divider">Available resources</h3>
+              <div class="form-row"><label>Shelter places (people)<input name="available_shelter_places" type="number" min="0" max="1000000" step="1" required placeholder="e.g. 700"></label><label>Response teams<input name="available_response_teams" type="number" min="0" max="100000" step="1" required placeholder="e.g. 5"></label></div>
+              <button class="button primary full" type="submit" id="analyze-button">Find similar cases</button>
+            </fieldset>
+          </form>
+        </section>
+        <div class="results-column">
+          <section class="panel" id="results-panel" aria-live="polite" aria-busy="false">
+            <div class="panel-heading"><h2>Similar cases</h2><p id="results-caption"></p></div>
+            <div id="results-body"><div class="empty-state"><p>Enter a scenario to find similar cases.</p></div></div>
+          </section>
+          <section class="panel" id="review-panel" hidden>
+            <div class="panel-heading"><h2 id="review-title">Review plan</h2><p id="review-caption"></p></div>
+            <div id="adaptation-details"></div>
+            <form id="review-form">
+              <fieldset id="review-fields">
+                <div class="plan-fields"><label>Planning priority<select name="priority" required></select></label><label>Total shelter places<input name="shelter_places" type="number" min="0" max="1000000" step="1" required></label><label>Total response teams<input name="response_teams" type="number" min="1" max="100000" step="1" required></label></div>
+                <p id="shortfalls" class="field-hint"></p>
+                <label>Review actions<textarea name="actions" rows="3" required placeholder="Enter one action per line"></textarea><small>1–10 actions, up to 300 characters each.</small></label>
+                <label>Review note<textarea name="outcome" rows="2" maxlength="1000" required></textarea></label>
+                <label class="checkbox-label"><input name="reviewed" type="checkbox" required><span>I reviewed this plan.</span></label>
+                <button class="button primary" type="submit" id="retain-button">Save case</button>
+              </fieldset>
+              <div id="review-feedback" class="feedback" role="status" hidden></div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </section>
+    <section id="library-view" hidden aria-label="Case library">
+      <div class="panel">
+        <div class="library-toolbar"><h2>Saved cases <span id="case-count"></span></h2><div class="library-filters"><label class="sr-only" for="case-search">Search cases</label><input id="case-search" type="search" placeholder="Search cases…"><label class="sr-only" for="case-filter">Filter by disaster type</label><select id="case-filter"><option value="">All disaster types</option></select></div></div>
+        <div class="table-wrap"><table><thead><tr><th>Case ID</th><th>Disaster</th><th>Severity</th><th>Affected people</th><th>Source</th><th><span class="sr-only">Details</span></th></tr></thead><tbody id="library-body"></tbody></table></div>
+        <p id="library-count" class="panel-footnote"></p>
+      </div>
+    </section>
+    <footer>Classroom simulation · Not for real emergency decisions.</footer>
+  </main>
+  <dialog id="case-dialog"><div class="dialog-heading"><h2 id="case-dialog-title">Case details</h2><button type="button" class="button secondary" id="close-dialog">Close</button></div><div id="case-dialog-body"></div></dialog>
+</body>
+</html>

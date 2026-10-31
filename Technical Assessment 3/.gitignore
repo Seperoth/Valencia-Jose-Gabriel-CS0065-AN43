@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+data/cases.json
+data/cases.json.*.tmp
+.local/
+backups/

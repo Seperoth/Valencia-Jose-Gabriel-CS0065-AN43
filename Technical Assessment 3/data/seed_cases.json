@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "FLOOD-001",
+      "problem": {"disaster_type": "flood", "severity": 2, "affected_people": 300, "road_access": "open", "area_type": "coastal", "available_shelter_places": 200, "available_response_teams": 2},
+      "solution": {"priority": "routine", "shelter_places": 250, "response_teams": 3, "actions": ["Review the affected-settlement report.", "Check the shelter inventory and recorded resource gaps."]},
+      "outcome": "Synthetic exercise: the planning assumptions were reviewed in class.",
+      "reviewed": true, "source": "synthetic", "created_at": "2026-01-01T00:00:00+00:00", "adapted_from": null
+    },
+    {
+      "id": "FLOOD-002",
+      "problem": {"disaster_type": "flood", "severity": 4, "affected_people": 1000, "road_access": "restricted", "area_type": "urban", "available_shelter_places": 600, "available_response_teams": 4},
+      "solution": {"priority": "critical", "shelter_places": 800, "response_teams": 6, "actions": ["Review flood-impact reports and the affected-population estimate.", "Confirm the shelter inventory and access restrictions with the coordination team.", "Record the proposed resource gaps for review."]},
+      "outcome": "Synthetic exercise: the example plan used 800 shelter places and 6 teams.",
+      "reviewed": true, "source": "synthetic", "created_at": "2026-01-02T00:00:00+00:00", "adapted_from": null
+    },
+    {
+      "id": "FLOOD-003",
+      "problem": {"disaster_type": "flood", "severity": 5, "affected_people": 2500, "road_access": "blocked", "area_type": "rural", "available_shelter_places": 800, "available_response_teams": 6},
+      "solution": {"priority": "critical", "shelter_places": 2200, "response_teams": 12, "actions": ["Review reports for settlements with limited access.", "Check shelter capacity and resource requirements with the coordination team."]},
+      "outcome": "Synthetic exercise: access constraints required additional review.",
+      "reviewed": true, "source": "synthetic", "created_at": "2026-01-03T00:00:00+00:00", "adapted_from": null
+    },
+    {
+      "id": "TYPHOON-001",
+      "problem": {"disaster_type": "typhoon", "severity": 2, "affected_people": 400, "road_access": "open", "area_type": "rural", "available_shelter_places": 250, "available_response_teams": 3},
+      "solution": {"priority": "routine", "shelter_places": 300, "response_teams": 4, "actions": ["Review the wind-impact and population reports.", "Check available shelter capacity against the example plan."]},
+      "outcome": "Synthetic exercise: the proposed inventory was reviewed.",
+      "reviewed": true, "source": "synthetic", "created_at": "2026-01-04T00:00:00+00:00", "adapted_from": null
+    },
+    {
+      "id": "TYPHOON-002",
+      "problem": {"disaster_type": "typhoon", "severity": 4, "affected_people": 1500, "road_access": "restricted", "area_type": "coastal", "available_shelter_places": 700, "available_response_teams": 5},
+      "solution": {"priority": "critical", "shelter_places": 1200, "response_teams": 8, "actions": ["Review coastal impact reports and shelter records.", "Confirm the current access and resource assumptions with the coordination team."]},
+      "outcome": "Synthetic exercise: the example plan identified a shelter-capacity gap.",
+      "reviewed": true, "source": "synthetic", "created_at": "2026-01-05T00:00:00+00:00", "adapted_from": null
+    },
+    {
+      "id": "TYPHOON-003",
+      "problem": {"disaster_type": "typhoon", "severity": 5, "affected_people": 3000, "road_access": "blocked", "area_type": "coastal", "available_shelter_places": 1000, "available_response_teams": 8},
+      "solution": {"priority": "critical", "shelter_places": 2600, "response_teams": 16, "actions": ["Review reports from affected coastal settlements.", "Check the shelter and coordination-team estimates with the reviewer."]},
+      "outcome": "Synthetic exercise: the reviewer recorded additional coordination needs.",
+      "reviewed": true, "source": "synthetic", "created_at": "2026-01-06T00:00:00+00:00", "adapted_from": null
+    },
+    {
+      "id": "EARTHQUAKE-001",
+      "problem": {"disaster_type": "earthquake", "severity": 2, "affected_people": 200, "road_access": "open", "area_type": "urban", "available_shelter_places": 150, "available_response_teams": 2},
+      "solution": {"priority": "routine", "shelter_places": 160, "response_teams": 3, "actions": ["Review the building-damage and population reports.", "Check the shelter inventory for the example scenario."]},
+      "outcome": "Synthetic exercise: the classroom reviewer accepted the estimates.",
+      "reviewed": true, "source": "synthetic", "created_at": "2026-01-07T00:00:00+00:00", "adapted_from": null
+    },
+    {
+      "id": "EARTHQUAKE-002",
+      "problem": {"disaster_type": "earthquake", "severity": 4, "affected_people": 1200, "road_access": "restricted", "area_type": "urban", "available_shelter_places": 500, "available_response_teams": 6},
+      "solution": {"priority": "critical", "shelter_places": 900, "response_teams": 10, "actions": ["Review building-damage reports and access constraints.", "Compare proposed shelter and team counts with the available inventory."]},
+      "outcome": "Synthetic exercise: resource estimates were revised after review.",
+      "reviewed": true, "source": "synthetic", "created_at": "2026-01-08T00:00:00+00:00", "adapted_from": null
+    },
+    {
+      "id": "EARTHQUAKE-003",
+      "problem": {"disaster_type": "earthquake", "severity": 5, "affected_people": 2200, "road_access": "blocked", "area_type": "mountainous", "available_shelter_places": 600, "available_response_teams": 7},
+      "solution": {"priority": "critical", "shelter_places": 1800, "response_teams": 15, "actions": ["Review reports from settlements with blocked access.", "Check resource estimates with the coordination reviewer before accepting the plan."]},
+      "outcome": "Synthetic exercise: the plan included a coordination review for blocked access.",
+      "reviewed": true, "source": "synthetic", "created_at": "2026-01-09T00:00:00+00:00", "adapted_from": null
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+DISASTER DSS | Case-Based Reasoning
+Synthetic classroom examples only. Not for real emergency decisions.
+
+WORKED EXAMPLE - synthetic flood scenario; temporary case library
+
+1. CASE REPRESENTATION
+{
+  "disaster_type": "flood",
+  "severity": 5,
+  "affected_people": 1200,
+  "road_access": "restricted",
+  "area_type": "urban",
+  "available_shelter_places": 700,
+  "available_response_teams": 5
+}
+
+2. RETRIEVE - reviewed cases with the same disaster type
+No.  Case                  Similarity   Severity      People
+1    FLOOD-002                 90.1%          4       1,000
+2    FLOOD-003                 72.6%          5       2,500
+3    FLOOD-001                 46.1%          2         300
+Similarity measures feature resemblance; it is not probability of success.
+
+Why FLOOD-002 matched:
+Feature                     New           Stored          Weight    Local   Contribution
+disaster_type               flood         flood              25%   100.0%         25.00%
+severity                    5             4                  20%    75.0%         15.00%
+affected_people             1200          1000               15%    83.3%         12.50%
+road_access                 restricted    restricted         15%   100.0%         15.00%
+area_type                   urban         urban              10%   100.0%         10.00%
+available_shelter_places    700           600                10%    85.7%          8.57%
+available_response_teams    5             4                   5%    80.0%          4.00%
+Weighted sum = 0.9007 (90.1%).
+
+3. REUSE / ADAPT
+
+Illustrative planning priority: CRITICAL
+Proposed total shelter places: 1,104
+Additional shelter places needed: 404
+Proposed total response teams: 9
+Additional teams needed: 4
+  Reason: Population factor: 1200/1000 = 1.20.
+  Reason: Severity factor: 1 + 0.15 x (5 - 4) = 1.15.
+  Reason: Scale prior resources by both factors, round up, and cap shelter places at affected people.
+  Reason: Start from the stored priority (critical); adjust one level for changed severity or newly blocked access.
+  Review: Review flood-impact reports and the affected-population estimate.
+  Review: Confirm the shelter inventory and access restrictions with the coordination team.
+  Review: Record the proposed resource gaps for review.
+
+4. REVISE - example reviewer adds one coordination team.
+Reviewed response teams: 9 -> 10.
+
+5. RETAIN - wrote LEARNED-AC684E73 to the temporary JSON file.
+Case count: 9 -> 10.
+New query retrieves learned case: True.
+Similarity after learning: 100.0%.
+Learned solution: 10 reviewed response teams.
+Demo complete. Your saved library was not changed.
