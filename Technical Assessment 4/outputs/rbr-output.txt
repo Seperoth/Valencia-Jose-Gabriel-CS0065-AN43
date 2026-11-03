@@ -1,0 +1,20 @@
+TA4 DISASTER PLANNING EXERCISE - illustrative data only
+INPUT - 8 facts in 3 categories
+  weather: {'hazard': 'typhoon', 'severity': 5, 'expected_flooding': True}
+  community: {'area_type': 'urban', 'affected_people': 1200, 'road_access': 'restricted'}
+  resources: {'shelter_places': 700, 'response_teams': 5}
+
+RBR PROCESS - evaluate all 5 IF-THEN rules
+  rule_storm: FIRED
+  rule_flood: FIRED
+  rule_shelter: FIRED
+  rule_teams: FIRED
+  rule_urban: FIRED
+RBR OUTPUT - Rule-Based Reasoning Actions:
+- Prepare LGU coordination and public updates.
+- Review early evacuation from flood-prone areas.
+- Review 500 additional shelter places for all affected people.
+- Review 1 additional response team(s); rule total: 6.
+- Coordinate evacuation support by urban neighborhood.
+
+Demo used a temporary library; persistent saved cases were unchanged.

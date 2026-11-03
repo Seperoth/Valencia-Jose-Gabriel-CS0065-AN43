@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>RBR Python Output</title><style>*{box-sizing:border-box}body{margin:0;padding:30px;background:#fff;color:#111;font:24px/1.45 Consolas,monospace}h1{font:600 26px/1.3 Arial,sans-serif;margin:0 0 14px}.command{font-size:19px;color:#555;margin-bottom:20px}pre{font:inherit;white-space:pre-wrap;overflow-wrap:anywhere;margin:0}</style></head><body><h1>RBR program output</h1><div class="command">python ta4_reasoning.py --part rbr</div><pre>TA4 DISASTER PLANNING EXERCISE - illustrative data only
+INPUT - 8 facts in 3 categories
+  weather: {&#x27;hazard&#x27;: &#x27;typhoon&#x27;, &#x27;severity&#x27;: 5, &#x27;expected_flooding&#x27;: True}
+  community: {&#x27;area_type&#x27;: &#x27;urban&#x27;, &#x27;affected_people&#x27;: 1200, &#x27;road_access&#x27;: &#x27;restricted&#x27;}
+  resources: {&#x27;shelter_places&#x27;: 700, &#x27;response_teams&#x27;: 5}
+
+RBR PROCESS - evaluate all 5 IF-THEN rules
+  rule_storm: FIRED
+  rule_flood: FIRED
+  rule_shelter: FIRED
+  rule_teams: FIRED
+  rule_urban: FIRED
+RBR OUTPUT - Rule-Based Reasoning Actions:
+- Prepare LGU coordination and public updates.
+- Review early evacuation from flood-prone areas.
+- Review 500 additional shelter places for all affected people.
+- Review 1 additional response team(s); rule total: 6.
+- Coordinate evacuation support by urban neighborhood.
+
+Demo used a temporary library; persistent saved cases were unchanged.
+</pre></body></html>

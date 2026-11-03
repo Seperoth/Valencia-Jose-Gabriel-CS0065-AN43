@@ -1,0 +1,32 @@
+TA4 DISASTER PLANNING EXERCISE - illustrative data only
+INPUT - 8 facts in 3 categories
+  weather: {'hazard': 'typhoon', 'severity': 5, 'expected_flooding': True}
+  community: {'area_type': 'urban', 'affected_people': 1200, 'road_access': 'restricted'}
+  resources: {'shelter_places': 700, 'response_teams': 5}
+
+RBR PROCESS - evaluate all 5 IF-THEN rules
+  rule_storm: FIRED
+  rule_flood: FIRED
+  rule_shelter: FIRED
+  rule_teams: FIRED
+  rule_urban: FIRED
+RBR OUTPUT - Rule-Based Reasoning Actions:
+- Prepare LGU coordination and public updates.
+- Review early evacuation from flood-prone areas.
+- Review 500 additional shelter places for all affected people.
+- Review 1 additional response team(s); rule total: 6.
+- Coordinate evacuation support by urban neighborhood.
+
+CBR RETRIEVE - 4 stored cases; same-hazard filter
+  TYPHOON-01: 90.1%
+  TYPHOON-02: 89.1%
+CBR REUSE - adapt TYPHOON-01 to 1,200 affected people
+  Shelter places: 1104; teams: 9
+  Evacuation: Review early urban evacuation and accessible transport.
+CBR REVISE - response teams 9 -> 10
+  Reviewed shelter places: 1104
+CBR RETAIN - saved LEARNED-05; case count 4 -> 5
+  Same query after reload: LEARNED-05 at 100.0%
+  Stored review: Classroom review: kept the shelter estimate and added one coordination team.
+
+Demo used a temporary library; persistent saved cases were unchanged.

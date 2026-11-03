@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+cases.json
+practice.json
