@@ -8,7 +8,6 @@ This submission uses an illustrative LGU disaster-planning scenario to compare R
 
 - `TA4_Valencia.pdf` - compiled report with code, outputs, and reflections.
 - `ta4_reasoning.py` - complete runnable Python program.
-- `TA4_Valencia.docx` - editable report copy.
 
 The collaborator and professor fields are left blank if their names were not supplied; fill these on the cover before final submission.
 
